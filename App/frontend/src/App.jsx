@@ -2,7 +2,9 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 
 /* ===== Config de API: usa proxy si existe (vite.config.js) ===== */
 const API_BASE = import.meta.env.VITE_API_URL?.replace(/\/$/, "");
-const SUMMARIZE_URL = API_BASE ? `${API_BASE}/api/summarize` : `/api/summarize`;
+const SUMMARIZE_URL = API_BASE
+  ? `${API_BASE}/api/summarize`
+  : `/.netlify/functions/summarize`;
 
 /* ================= Tema persistente ================= */
 function useTheme() {
